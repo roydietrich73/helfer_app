@@ -2,7 +2,7 @@ import 'package:helfer_app/screens/splash_screen.dart';
 
 import 'models/theme.dart';
 import 'package:flutter/material.dart';
-//import 'package:helfer_app/screens/splash_screen.dart';
+
 
 
 void main(){

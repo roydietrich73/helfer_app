@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -25,16 +26,30 @@ class _SplashScreenState extends State<SplashScreen> {
     
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Helfer-App',
-          style: TextStyle(
-            color: Colors.amber,
-            fontSize: 24.0,
-            fontWeight:FontWeight.bold),
-        ),
-      ),
+    return Stack(
+      alignment: Alignment.center,
+        children: [
+          Opacity(
+              opacity: 0.3,
+              child: Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image:  AssetImage('assets/hintergrund.png'), 
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+          ),
+               Container(
+                width: 300,
+                height: 300,
+                decoration:const BoxDecoration(
+                image: DecorationImage(
+                image: AssetImage ("assets/Logo-Text.png"),
+                  ),
+                ),
+              ),
+      ],
     );
   }
 }
