@@ -1,6 +1,6 @@
 import 'package:helfer_app/screens/splash_screen.dart';
 
-import 'models/theme.dart';
+import 'utils/theme.dart';
 import 'package:flutter/material.dart';
 
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       //theme: MyAppTheme.lightTheme(), // Verwende lightTheme
       theme: MyAppTheme.darkTheme(), // Oder verwende darkTheme
-        home: SplashScreen(         
+        home: const SplashScreen(         
           
         ),
      );  

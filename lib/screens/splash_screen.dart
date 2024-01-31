@@ -1,9 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
+//import 'package:helfer_app/screens/anmelden_screen.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -12,13 +13,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _navigateToAnmeldenScreen();
+    _navigateToAnmeldenLoginScreen();
   }
-   _navigateToAnmeldenScreen(){
+   _navigateToAnmeldenLoginScreen(){
     Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (BuildContext context) => AnmeldenScreen(),
+          builder: (BuildContext context) => AnmeldenLoginScreen(),
           ),
     );
    });
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
       alignment: Alignment.center,
         children: [
           Opacity(
-              opacity: 0.3,
+              opacity: 0.2,
               child: Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -41,11 +42,9 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
           ),
                Container(
-                width: 300,
-                height: 300,
                 decoration:const BoxDecoration(
                 image: DecorationImage(
-                image: AssetImage ("assets/Logo-Text.png"),
+                image: AssetImage ("assets/images/Logo-Text.png"),
                   ),
                 ),
               ),
@@ -54,7 +53,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
-AnmeldenScreen() async {
+AnmeldenLoginScreen() {
 }
+
+
   
 
