@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 
 import 'package:path/path.dart' as path;
 
-import '../../MyApp/participant.dart';
+import '../../listen/participant.dart';
 
 class JsonService {
   static const String _fileName = "participants.json";

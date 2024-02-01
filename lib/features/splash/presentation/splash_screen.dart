@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-//import 'package:helfer_app/screens/anmelden_screen.dart';
+//import 'package:helfer_app/features/authentification/presentation/anmelden_login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,11 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
    _navigateToAnmeldenLoginScreen(){
     Timer(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (BuildContext context) => AnmeldenLoginScreen(),
-          ),
-    );
+      Navigator.pushReplacementNamed(context, '/anmeldenLogin');
    });
   }
     
@@ -44,17 +40,16 @@ class _SplashScreenState extends State<SplashScreen> {
                Container(
                 decoration:const BoxDecoration(
                 image: DecorationImage(
-                image: AssetImage ("assets/images/Logo-Text.png"),
+                image: AssetImage ("assets/images/Logo.png"),
                   ),
                 ),
               ),
-      ],
+               ],     
     );
   }
 }
 
-AnmeldenLoginScreen() {
-}
+
 
 
   

@@ -1,6 +1,6 @@
 
 
-import '../../MyApp/participant.dart';
+import '../../listen/participant.dart';
 import '../database_repository.dart';
 import 'json_service.dart';
 

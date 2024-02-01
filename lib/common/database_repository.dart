@@ -1,6 +1,6 @@
 
 
-import '../MyApp/participant.dart';
+import '../listen/participant.dart';
 
 
 abstract class DatabaseRepository {

@@ -1,4 +1,4 @@
-import '../../MyApp/participant.dart';
+import '../../listen/participant.dart';
 import '../database_repository.dart';
 import 'shared_prefs_service.dart';
 

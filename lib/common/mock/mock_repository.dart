@@ -1,6 +1,7 @@
-import 'package:helfer_app/MyApp/participant.dart';
-import 'package:helfer_app/services/database_repository.dart';
-import 'package:helfer_app/services/mock/mock_service.dart';
+import 'package:helfer_app/common/database_repository.dart';
+import 'package:helfer_app/common/mock/mock_service.dart';
+import 'package:helfer_app/listen/participant.dart';
+
 
 class MockRepository implements DatabaseRepository {
   final MockService _mockService;

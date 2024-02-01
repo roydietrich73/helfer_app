@@ -1,4 +1,4 @@
-import 'package:helfer_app/MyApp/participant.dart';
+import 'package:helfer_app/listen/participant.dart';
 
 class MockService {
   List<Participant>? _participantList;
