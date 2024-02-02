@@ -6,16 +6,16 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  SplashScreenState createState() => SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
     _navigateToAnmeldenLoginScreen();
   }
-   _navigateToAnmeldenLoginScreen(){
+   void _navigateToAnmeldenLoginScreen(){
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/anmeldenLogin');
    });
@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
                Container(
                 decoration:const BoxDecoration(
                 image: DecorationImage(
-                image: AssetImage ("assets/images/Logo.png"),
+                image: AssetImage ("assets/images/logo.png"),
                   ),
                 ),
               ),
