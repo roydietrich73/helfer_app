@@ -20,17 +20,18 @@ class _PasswordInputState extends State<PwI> {
           TextField(
             controller: _controller,
             obscureText: true,
+            style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
               labelText: 'Password',
               errorText: _isValid ? null : 'Falsches Password',
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
             ),
           ),
           SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: _savePassword,
-            child: Text('Save Password'),
-          ),
         ],
       ),
     );

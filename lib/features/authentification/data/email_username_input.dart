@@ -19,17 +19,19 @@ class _EmailUsernameInputState extends State<EmailUsernameInput> {
         children: [
           TextField(
             controller: _controller,
+            obscureText: false,
+            style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
               labelText: 'Email or Username',
               errorText: _isValid ? null : 'Invalid input',
-              border: OutlineInputBorder(),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              contentPadding:
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
             ),
           ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: _saveInput,
-            child: Text('Save'),
-          ),
+          const SizedBox(height: 20),
         ],
       ),
     );

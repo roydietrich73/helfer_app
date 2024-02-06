@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+//import 'package:helfer_app/common/database_repository.dart';
 import 'package:helfer_app/config/fonts.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/apple_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/google_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/login_button.dart';
 import 'package:helfer_app/features/authentification/presentation/login_screen.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/registrieren_button.dart';
+import 'package:helfer_app/features/authentification/presentation/registrieren.dart';
 
 class AnmeldenLogin extends StatelessWidget {
-  const AnmeldenLogin({super.key});
+//final DatabaseRepository databaseRepository;
+
+  const AnmeldenLogin({super.key}); //required this.databaseRepository,});
 
   void _navigateToLogin(BuildContext context) {
     Navigator.push(
@@ -64,8 +68,8 @@ class AnmeldenLogin extends StatelessWidget {
               const SizedBox(
                 height: 32.0,
               ),
-              Center(
-                child: const Text(
+              const Center(
+                child: Text(
                   'Noch kein Konto?',
                   style: TextStyle(
                     fontFamily: fo20,
@@ -74,7 +78,13 @@ class AnmeldenLogin extends StatelessWidget {
                 ),
               ),
               RegistrierenBtn1(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Registrieren()),
+                  );
+                },
               ),
             ],
           ),

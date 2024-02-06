@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class BasicScreen extends StatelessWidget {
   const BasicScreen({super.key});
 
@@ -11,33 +10,29 @@ class BasicScreen extends StatelessWidget {
         title: const Text('Helfer-App'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-          },
+          onPressed: () {},
         ),
         actions: [
           IconButton(
             icon: const Icon(Icons.menu),
-            onPressed: () {
-            },
+            onPressed: () {},
           ),
         ],
       ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/hintergrund.png'), // Pfad zum Hintergrundbild
+            image: AssetImage(
+                'assets/hintergrund.png'), // Pfad zum Hintergrundbild
             fit: BoxFit.cover,
           ),
         ),
-        child: const Center(
-          child: Text('Inhalt des Bildschirms hier'),
-        ),
+        child: const Center(),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
-        onTap: (index) {
-        },
-        items: const[
+        onTap: (index) {},
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Startseite',
