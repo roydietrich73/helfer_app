@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/features/authentification/data/email_username_input.dart';
 import 'package:helfer_app/features/authentification/data/password_input.dart';
-import 'package:helfer_app/features/authentification/presentation/home_screen.dart';
+import 'package:helfer_app/features/home/home_screen.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
