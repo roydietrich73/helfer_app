@@ -8,6 +8,7 @@ class GoogleBtn1 extends StatelessWidget {
   const GoogleBtn1({
     required this.onPressed,
     Key? key,
+    required Text child,
   }) : super(key: key);
 
   @override

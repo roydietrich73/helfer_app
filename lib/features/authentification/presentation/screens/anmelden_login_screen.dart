@@ -58,8 +58,7 @@ class AnmeldenLogin extends StatelessWidget {
                 height: 16.0,
               ),
               GoogleBtn1(
-                onPressed: () {},
-              ),
+                  onPressed: () {}, child: const Text('Mit Google anmelden')),
               const SizedBox(
                 height: 16.0,
               ),

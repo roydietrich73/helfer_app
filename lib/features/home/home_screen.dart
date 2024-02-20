@@ -1,13 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/home/navbar/bottom_nav_bar.dart';
 import 'package:helfer_app/features/home/button/elvd_button.dart';
 import 'package:helfer_app/features/home/container/first_container.dart';
-import 'package:helfer_app/features/home/container/second_container.dart';
+import 'package:helfer_app/features/home/container/new_container.dart';
 import 'package:helfer_app/utils/sizes.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, User? user});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
