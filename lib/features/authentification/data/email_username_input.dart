@@ -7,8 +7,8 @@ class EmailUsernameInput extends StatefulWidget {
 }
 
 class _EmailUsernameInputState extends State<EmailUsernameInput> {
-  final TextEditingController _controller = TextEditingController();
-  bool _isValid = true;
+  TextEditingController emailController = TextEditingController();
+  bool _isValid = false;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class _EmailUsernameInputState extends State<EmailUsernameInput> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextField(
-            controller: _controller,
+            controller: emailController,
             obscureText: false,
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
@@ -38,7 +38,7 @@ class _EmailUsernameInputState extends State<EmailUsernameInput> {
   }
 
   void _saveInput() async {
-    String input = _controller.text.trim();
+    String input = emailController.text.trim();
 
     // Simple email validation
     bool isValidEmail =

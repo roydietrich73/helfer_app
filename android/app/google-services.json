@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "768561745280",
+    "project_id": "test-app-11383",
+    "storage_bucket": "test-app-11383.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:768561745280:android:620b4bea8980449363c565",
+        "android_client_info": {
+          "package_name": "com.example.helfer_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4jNZvH4ONtG5BC7kDBz56Lmf7V5lwgPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

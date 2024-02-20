@@ -4,9 +4,10 @@ import 'package:helfer_app/config/fonts.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/apple_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/google_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/login_button.dart';
-import 'package:helfer_app/features/authentification/presentation/login_screen.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/registrieren_button.dart';
-import 'package:helfer_app/features/authentification/presentation/registrieren.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/login_page.dart';
+//import 'package:helfer_app/features/authentification/presentation/login_state.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/registrieren.dart';
 
 class AnmeldenLogin extends StatelessWidget {
 //final DatabaseRepository databaseRepository;
@@ -16,7 +17,7 @@ class AnmeldenLogin extends StatelessWidget {
   void _navigateToLogin(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const Login()),
+      MaterialPageRoute(builder: (context) => LoginScreen()),
     );
   }
 

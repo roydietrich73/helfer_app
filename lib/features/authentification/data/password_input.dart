@@ -7,7 +7,7 @@ class PwI extends StatefulWidget {
 }
 
 class _PasswordInputState extends State<PwI> {
-  final TextEditingController _controller = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   bool _isValid = true;
 
   @override
@@ -18,7 +18,7 @@ class _PasswordInputState extends State<PwI> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextField(
-            controller: _controller,
+            controller: passwordController,
             obscureText: true,
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
@@ -38,7 +38,7 @@ class _PasswordInputState extends State<PwI> {
   }
 
   void _savePassword() async {
-    String password = _controller.text;
+    String password = passwordController.text;
 
     // Simple password validation (length >= 6)
     bool isValidPassword = password.length >= 6;

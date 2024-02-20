@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:helfer_app/common/database_repository.dart';
-import 'package:helfer_app/common/mock/mock_repository.dart';
-import 'package:helfer_app/common/mock/mock_service.dart';
-import 'package:helfer_app/features/authentification/presentation/anmelden_login_screen.dart';
+//import 'package:helfer_app/common/database_repository.dart';
+//import 'package:helfer_app/common/mock/mock_repository.dart';
+//import 'package:helfer_app/common/mock/mock_service.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/anmelden_login_screen.dart';
+import 'package:helfer_app/features/authentification/presentation/auth_model.dart';
+//import 'package:helfer_app/features/authentification/presentation/login_page.dart';
 //import 'package:helfer_app/features/base_screen.dart';
 import 'package:helfer_app/features/splash/presentation/splash_screen.dart';
 import 'package:helfer_app/utils/theme.dart';
+import 'package:provider/provider.dart';
 
-class MyApp extends StatefulWidget {
+/*class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
@@ -32,16 +35,20 @@ class _AppState extends State<MyApp> {
     databaseRepository //= JsonRepository(JsonService());
         //               = SharedPrefsRepository(SharedPrefsService());
         = MockRepository(mockService);
-  }
-
+  }}*/
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ChangeNotifierProvider(
+      create: (context) => AuthModel()..checkAuthStatus(),
+      child: MaterialApp(
         theme: MyAppTheme.lightTheme(),
-        home: const SplashScreen(),
-        routes: {
-          '/anmeldenLogin': (context) => const AnmeldenLogin(),
-          //databaseRepository: databaseRepository,
-        });
+        home: Consumer<AuthModel>(
+          builder: (context, authModel, child) {
+            return authModel.isAuthenticated ? SplashScreen() : AnmeldenLogin();
+          },
+        ),
+      ),
+    );
   }
 }
