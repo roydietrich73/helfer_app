@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 class PasswordInput extends StatefulWidget {
   final String hintText;
@@ -70,4 +70,4 @@ class _PasswordInputState extends State<PasswordInput> {
       },
     );
   }
-}
+}*/

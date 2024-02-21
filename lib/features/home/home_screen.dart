@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
+import 'package:helfer_app/features/home/container/toggle_container.dart';
 import 'package:helfer_app/features/home/navbar/bottom_nav_bar.dart';
-import 'package:helfer_app/features/home/button/elvd_button.dart';
 import 'package:helfer_app/features/home/container/first_container.dart';
 import 'package:helfer_app/features/home/container/new_container.dart';
+import 'package:helfer_app/features/selection_screen.dart';
 import 'package:helfer_app/utils/sizes.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -66,23 +67,41 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   GestureDetector(
-                    onTap: () => _toggleColor(1),
+                    onTap: () {
+                      ToggleColorApp();
+                    },
                     child: FirstContainer(color1: _color1),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 24,
                   ),
                   GestureDetector(
-                    onTap: () => _toggleColor(2),
+                    onTap: () {
+                      ToggleColorApp();
+                    },
                     child: NewContainer(color2: _color2),
                   ),
                 ]),
             Sizes.gapH100,
-            ElvdButton()
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SelectionScreen()));
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: btnColor,
+                fixedSize: const Size(150, 50),
+                elevation: 20,
+              ),
+              child: const Text(
+                'Weiter',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

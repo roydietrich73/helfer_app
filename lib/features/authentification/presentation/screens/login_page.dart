@@ -1,16 +1,38 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:helfer_app/features/authentification/presentation/auth_model.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/login_button.dart';
 import 'package:helfer_app/features/home/home_screen.dart';
-import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
-  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  Future<void> _login(BuildContext context) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+    try {
+      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+      // Speichere die Benutzerdaten in Firestore, wenn der Benutzer erfolgreich angemeldet ist
+      await firestore.collection('users').doc(userCredential.user!.uid).set({
+        'email': _emailController.text,
+      });
+      // Navigiere zur nächsten Seite
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+    } catch (e) {
+      print("Fehler bei der Anmeldung: $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final authModel = Provider.of<AuthModel>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -27,22 +49,17 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
-                controller: _usernameController,
-                decoration: InputDecoration(labelText: 'Username'),
+                controller: _emailController,
+                decoration: const InputDecoration(labelText: 'Username'),
               ),
               TextField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               LoginBtn1(
-                onPressed: () {
-                  final username = _usernameController.text;
-                  final password = _passwordController.text;
-                  authModel.login(username, password);
-                  _navigateToHome(context);
-                },
+                onPressed: () => _login(context),
               ),
             ],
           ),
@@ -70,15 +87,6 @@ class LoginScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _navigateToHome {
-  _navigateToHome(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()),
     );
   }
 }
