@@ -13,6 +13,9 @@ class _RegisterFormState extends State<RegisterForm> {
   String _lastName = '';
   String _address = '';
   String _zipCode = '';
+  String _email = '';
+  String _username = '';
+  String _besonderheiten = '';
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +74,42 @@ class _RegisterFormState extends State<RegisterForm> {
                 _zipCode = value!;
               },
             ),
+            TextFormField(
+              decoration: InputDecoration(labelText: 'E-Mail'),
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Bitte geben Sie Ihre E-Mail ein';
+                }
+                return null;
+              },
+              onSaved: (value) {
+                _zipCode = value!;
+              },
+            ),
+            TextFormField(
+              decoration: InputDecoration(labelText: 'Username'),
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Bitte geben Sie Ihren Usernamen ein';
+                }
+                return null;
+              },
+              onSaved: (value) {
+                _zipCode = value!;
+              },
+            ),
+            TextFormField(
+              decoration: InputDecoration(labelText: 'Besonderheiten'),
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Bitte geben Sie Ihre Besonderheiten ein';
+                }
+                return null;
+              },
+              onSaved: (value) {
+                _zipCode = value!;
+              },
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: ElevatedButton(
@@ -79,10 +118,13 @@ class _RegisterFormState extends State<RegisterForm> {
                     _formKey.currentState!.save();
                     // Daten in Firestore speichern
                     await FirebaseFirestore.instance.collection('users').add({
-                      'firstName': _firstName,
-                      'lastName': _lastName,
-                      'address': _address,
-                      'zipCode': _zipCode,
+                      'Vorname': _firstName,
+                      'Nachname': _lastName,
+                      'Addresse': _address,
+                      'Postleitzahl': _zipCode,
+                      'E-Mail': _email,
+                      'Username': _username,
+                      'Besonderheiten': _besonderheiten
                     });
                     // Weiterleitung zum Home-Screen
                     Navigator.pushReplacement(

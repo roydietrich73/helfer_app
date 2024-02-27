@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:helfer_app/common/database_repository.dart';
-//import 'package:helfer_app/common/mock/mock_repository.dart';
-//import 'package:helfer_app/common/mock/mock_service.dart';
-import 'package:helfer_app/features/authentification/presentation/screens/anmelden_login_screen.dart';
+import 'package:helfer_app/auth_wrapper.dart';
 import 'package:helfer_app/features/authentification/presentation/auth_model.dart';
-//import 'package:helfer_app/features/authentification/presentation/login_page.dart';
-//import 'package:helfer_app/features/base_screen.dart';
-import 'package:helfer_app/features/splash/presentation/splash_screen.dart';
 import 'package:helfer_app/utils/theme.dart';
 import 'package:provider/provider.dart';
 
@@ -36,18 +30,15 @@ class _AppState extends State<MyApp> {
         //               = SharedPrefsRepository(SharedPrefsService());
         = MockRepository(mockService);
   }}*/
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => AuthModel()..checkAuthStatus(),
+      create: (context) => AuthModel(),
       child: MaterialApp(
         theme: MyAppTheme.lightTheme(),
-        home: Consumer<AuthModel>(
-          builder: (context, authModel, child) {
-            return authModel.isAuthenticated ? SplashScreen() : AnmeldenLogin();
-          },
-        ),
+        home: AuthWrapper(),
       ),
     );
   }

@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
+import 'package:helfer_app/features/btn_nav_bar.dart';
 import 'package:helfer_app/features/home/container/toggle_container.dart';
-import 'package:helfer_app/features/home/navbar/bottom_nav_bar.dart';
 import 'package:helfer_app/features/home/container/first_container.dart';
 import 'package:helfer_app/features/home/container/new_container.dart';
-import 'package:helfer_app/features/selection_screen.dart';
+import 'package:helfer_app/features/selections/selection_screen.dart';
 import 'package:helfer_app/utils/sizes.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -101,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helfer_app/features/btn_nav_bar.dart';
 
 class BasicScreen extends StatelessWidget {
   const BasicScreen({super.key});
@@ -29,28 +30,7 @@ class BasicScreen extends StatelessWidget {
         ),
         child: const Center(),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        onTap: (index) {},
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Startseite',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Suche',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favoriten',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Einstellungen',
-          ),
-        ],
-      ),
+      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

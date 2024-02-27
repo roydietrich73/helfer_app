@@ -7,7 +7,7 @@ class LoginBtn1 extends StatelessWidget {
   final Function() onPressed;
   const LoginBtn1({
     required this.onPressed,
-    Key? key,
+    Key? key, 
   }) : super(key: key);
 
   @override

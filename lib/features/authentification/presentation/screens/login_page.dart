@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/login_button.dart';
+import 'package:helfer_app/features/btn_nav_bar.dart';
 import 'package:helfer_app/features/home/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -17,11 +18,9 @@ class LoginScreen extends StatelessWidget {
         email: _emailController.text,
         password: _passwordController.text,
       );
-      // Speichere die Benutzerdaten in Firestore, wenn der Benutzer erfolgreich angemeldet ist
       await firestore.collection('users').doc(userCredential.user!.uid).set({
         'email': _emailController.text,
       });
-      // Navigiere zur nächsten Seite
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomeScreen()),
@@ -50,7 +49,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               TextField(
                 controller: _emailController,
-                decoration: const InputDecoration(labelText: 'Username'),
+                decoration: const InputDecoration(labelText: 'E_Mail'),
               ),
               TextField(
                 controller: _passwordController,
@@ -65,28 +64,7 @@ class LoginScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        onTap: (index) {},
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Startseite',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Suche',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favoriten',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Einstellungen',
-          ),
-        ],
-      ),
+      bottomNavigationBar: btnNavBar(),
     );
   }
 }

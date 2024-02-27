@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-//import 'package:helfer_app/common/database_repository.dart';
 import 'package:helfer_app/config/fonts.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/apple_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/google_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/login_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/registrieren_button.dart';
 import 'package:helfer_app/features/authentification/presentation/screens/login_page.dart';
-//import 'package:helfer_app/features/authentification/presentation/login_state.dart';
 import 'package:helfer_app/features/authentification/presentation/screens/registrieren.dart';
 
 class AnmeldenLogin extends StatelessWidget {

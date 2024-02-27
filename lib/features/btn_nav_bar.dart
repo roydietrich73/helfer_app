@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
 
-class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({
+class btnNavBar extends StatelessWidget {
+  const btnNavBar({
     super.key,
   });
 

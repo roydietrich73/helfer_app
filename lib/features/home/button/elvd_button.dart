@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
-import 'package:helfer_app/features/selection_screen.dart';
+import 'package:helfer_app/features/selections/selection_screen.dart';
 
 class ElvdButton extends StatelessWidget {
   const ElvdButton({

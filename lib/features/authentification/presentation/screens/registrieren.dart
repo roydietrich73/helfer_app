@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/features/authentification/presentation/register_form.dart';
+import 'package:helfer_app/features/btn_nav_bar.dart';
 
 class Registrieren extends StatelessWidget {
   const Registrieren({super.key});
@@ -34,28 +35,7 @@ class Registrieren extends StatelessWidget {
           child: RegisterForm(),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        onTap: (index) {},
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Startseite',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Suche',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favoriten',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Einstellungen',
-          ),
-        ],
-      ),
+      bottomNavigationBar: btnNavBar(),
     );
   }
 }
