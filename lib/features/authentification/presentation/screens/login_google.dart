@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:helfer_app/features/authentification/presentation/buttons/google_button.dart';
+import 'package:helfer_app/features/btn_nav_bar.dart';
+import 'package:helfer_app/features/home/home_screen.dart';
 
 abstract class LoginWithGooglePage extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -25,7 +28,7 @@ abstract class LoginWithGooglePage extends StatelessWidget {
     }
   }
 
-  /*@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -74,28 +77,7 @@ abstract class LoginWithGooglePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        onTap: (index) {},
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Startseite',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Suche',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favoriten',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Einstellungen',
-          ),
-        ],
-      ),
+      bottomNavigationBar: btnNavBar(),
     );
-  }*/
+  }
 }

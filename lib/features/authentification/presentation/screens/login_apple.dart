@@ -55,7 +55,7 @@ abstract class LoginApple extends StatelessWidget {
     }
   }
 
-  /*@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -69,5 +69,4 @@ abstract class LoginApple extends StatelessWidget {
       ),
     );
   }
-}*/
 }
