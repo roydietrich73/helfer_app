@@ -8,6 +8,7 @@ class AppleBtn1 extends StatelessWidget {
   const AppleBtn1({
     required this.onPressed,
     Key? key,
+    required Text child,
   }) : super(key: key);
 
   @override
@@ -23,6 +24,7 @@ class AppleBtn1 extends StatelessWidget {
         style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15)))),
+        onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -43,7 +45,6 @@ class AppleBtn1 extends StatelessWidget {
             ),
           ],
         ),
-        onPressed: onPressed,
       ),
     );
   }

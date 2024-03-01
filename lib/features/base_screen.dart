@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/btn_nav_bar.dart';
 
 class BasicScreen extends StatelessWidget {
@@ -7,30 +8,28 @@ class BasicScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: btnColor2,
         title: const Text('Helfer-App'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {},
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-          ),
-        ],
       ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-                'assets/hintergrund.png'), // Pfad zum Hintergrundbild
+            opacity: 0.2,
+            image: AssetImage('assets/hintergrund.png'),
             fit: BoxFit.cover,
           ),
         ),
-        child: const Center(),
+        child: const Center(
+            //einfügen von weiteren funktionen
+            ),
       ),
-      bottomNavigationBar: const btnNavBar(),
+      bottomNavigationBar: btnNavBar(),
     );
   }
 }

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:helfer_app/features/authentification/presentation/buttons/google_button.dart';
-import 'package:helfer_app/features/home/home_screen.dart';
 
-class LoginWithGooglePage extends StatelessWidget {
+abstract class LoginWithGooglePage extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
 
@@ -27,7 +25,7 @@ class LoginWithGooglePage extends StatelessWidget {
     }
   }
 
-  @override
+  /*@override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -99,5 +97,5 @@ class LoginWithGooglePage extends StatelessWidget {
         ],
       ),
     );
-  }
+  }*/
 }

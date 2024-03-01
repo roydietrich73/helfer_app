@@ -4,8 +4,11 @@ import 'package:helfer_app/features/authentification/presentation/buttons/apple_
 import 'package:helfer_app/features/authentification/presentation/buttons/google_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/login_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/registrieren_button.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/login_apple.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/login_google.dart';
 import 'package:helfer_app/features/authentification/presentation/screens/login_page.dart';
 import 'package:helfer_app/features/authentification/presentation/screens/registrieren.dart';
+//import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class AnmeldenLogin extends StatelessWidget {
 //final DatabaseRepository databaseRepository;
@@ -56,13 +59,18 @@ class AnmeldenLogin extends StatelessWidget {
                 height: 16.0,
               ),
               GoogleBtn1(
-                  onPressed: () {}, child: const Text('Mit Google anmelden')),
+                  onPressed: () {
+                    LoginWithGooglePage;
+                  },
+                  child: const Text('Mit Google anmelden')),
               const SizedBox(
                 height: 16.0,
               ),
               AppleBtn1(
-                onPressed: () {},
-              ),
+                  onPressed: () {
+                    LoginApple;
+                  },
+                  child: const Text('Mit Apple anmelden')),
               const SizedBox(
                 height: 32.0,
               ),

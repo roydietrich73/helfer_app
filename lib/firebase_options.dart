@@ -44,38 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDpdNY3DPDTg5bQKb8FDHCtARmtlKT-6lA',
-    appId: '1:768561745280:web:44f79d3d9cbce6da63c565',
-    messagingSenderId: '768561745280',
-    projectId: 'test-app-11383',
-    authDomain: 'test-app-11383.firebaseapp.com',
-    storageBucket: 'test-app-11383.appspot.com',
-    measurementId: 'G-WSTFWYRY8Y',
+    apiKey: 'AIzaSyD-QU7Tm5A1pZvRXIZQcxvvHFLVoeoaVwk',
+    appId: '1:589261855054:web:df4ef0ff75a37ba380a61f',
+    messagingSenderId: '589261855054',
+    projectId: 'helfer-app-a7bc4',
+    authDomain: 'helfer-app-a7bc4.firebaseapp.com',
+    storageBucket: 'helfer-app-a7bc4.appspot.com',
+    measurementId: 'G-VYTBWQR685',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB4jNZvH4ONtG5BC7kDBz56Lmf7V5lwgPI',
-    appId: '1:768561745280:android:620b4bea8980449363c565',
-    messagingSenderId: '768561745280',
-    projectId: 'test-app-11383',
-    storageBucket: 'test-app-11383.appspot.com',
+    apiKey: 'AIzaSyCQlegMGzBUg06ouLpcfCjyrQpcp9XHL_w',
+    appId: '1:589261855054:android:7c0bb12ea778a42380a61f',
+    messagingSenderId: '589261855054',
+    projectId: 'helfer-app-a7bc4',
+    storageBucket: 'helfer-app-a7bc4.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBIl3cI3RPe1DTC8Fj3VXmv7JbFHFH4XTE',
-    appId: '1:768561745280:ios:b741327909b1bc7a63c565',
-    messagingSenderId: '768561745280',
-    projectId: 'test-app-11383',
-    storageBucket: 'test-app-11383.appspot.com',
+    apiKey: 'AIzaSyBsvGHwODJqCU5no0FOspYsYi2b09W6SkU',
+    appId: '1:589261855054:ios:1e736c209991413380a61f',
+    messagingSenderId: '589261855054',
+    projectId: 'helfer-app-a7bc4',
+    storageBucket: 'helfer-app-a7bc4.appspot.com',
     iosBundleId: 'com.example.helferApp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBIl3cI3RPe1DTC8Fj3VXmv7JbFHFH4XTE',
-    appId: '1:768561745280:ios:8c9d420700935e1a63c565',
-    messagingSenderId: '768561745280',
-    projectId: 'test-app-11383',
-    storageBucket: 'test-app-11383.appspot.com',
+    apiKey: 'AIzaSyBsvGHwODJqCU5no0FOspYsYi2b09W6SkU',
+    appId: '1:589261855054:ios:94a4b05de36d08d580a61f',
+    messagingSenderId: '589261855054',
+    projectId: 'helfer-app-a7bc4',
+    storageBucket: 'helfer-app-a7bc4.appspot.com',
     iosBundleId: 'com.example.helferApp.RunnerTests',
   );
 }

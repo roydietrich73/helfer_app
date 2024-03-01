@@ -13,21 +13,21 @@ class _RegisterFormState extends State<RegisterForm> {
   String _lastName = '';
   String _address = '';
   String _zipCode = '';
-  String _email = '';
-  String _username = '';
-  String _besonderheiten = '';
+  final String _email = '';
+  final String _username = '';
+  final String _besonderheiten = '';
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Form(
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             TextFormField(
-              decoration: InputDecoration(labelText: 'Vorname'),
+              decoration: const InputDecoration(labelText: 'Vorname'),
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Bitte geben Sie Ihren Vornamen ein';
@@ -39,7 +39,7 @@ class _RegisterFormState extends State<RegisterForm> {
               },
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Nachname'),
+              decoration: const InputDecoration(labelText: 'Nachname'),
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Bitte geben Sie Ihren Nachnamen ein';
@@ -51,7 +51,7 @@ class _RegisterFormState extends State<RegisterForm> {
               },
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Adresse'),
+              decoration: const InputDecoration(labelText: 'Adresse'),
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Bitte geben Sie Ihre Adresse ein';
@@ -63,7 +63,7 @@ class _RegisterFormState extends State<RegisterForm> {
               },
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Postleitzahl'),
+              decoration: const InputDecoration(labelText: 'Postleitzahl'),
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Bitte geben Sie Ihre Postleitzahl ein';
@@ -75,7 +75,7 @@ class _RegisterFormState extends State<RegisterForm> {
               },
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'E-Mail'),
+              decoration: const InputDecoration(labelText: 'E-Mail'),
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Bitte geben Sie Ihre E-Mail ein';
@@ -87,7 +87,7 @@ class _RegisterFormState extends State<RegisterForm> {
               },
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Username'),
+              decoration: const InputDecoration(labelText: 'Username'),
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Bitte geben Sie Ihren Usernamen ein';
@@ -99,7 +99,7 @@ class _RegisterFormState extends State<RegisterForm> {
               },
             ),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Besonderheiten'),
+              decoration: const InputDecoration(labelText: 'Besonderheiten'),
               validator: (value) {
                 if (value!.isEmpty) {
                   return 'Bitte geben Sie Ihre Besonderheiten ein';
@@ -129,11 +129,12 @@ class _RegisterFormState extends State<RegisterForm> {
                     // Weiterleitung zum Home-Screen
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()),
                     );
                   }
                 },
-                child: Text('Registrieren'),
+                child: const Text('Registrieren'),
               ),
             ),
           ],

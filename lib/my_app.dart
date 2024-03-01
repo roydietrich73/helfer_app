@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helfer_app/auth_wrapper.dart';
+//import 'package:helfer_app/auth_wrapper.dart';
 import 'package:helfer_app/features/authentification/presentation/auth_model.dart';
 import 'package:helfer_app/utils/theme.dart';
 import 'package:provider/provider.dart';
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       create: (context) => AuthModel(),
       child: MaterialApp(
         theme: MyAppTheme.lightTheme(),
-        home: AuthWrapper(),
+        // home: AuthWrapper(),
       ),
     );
   }

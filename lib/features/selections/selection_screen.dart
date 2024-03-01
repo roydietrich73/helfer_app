@@ -1,10 +1,16 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/btn_nav_bar.dart';
 //import 'package:helfer_app/utils/sizes.dart';
 
 class SelectionScreen extends StatefulWidget {
+  const SelectionScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _SelectionScreenState createState() => _SelectionScreenState();
 }
 
@@ -43,7 +49,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
         'selectedCategories': selectedCategories,
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Auswahl gespeichert')),
+        const SnackBar(content: Text('Auswahl gespeichert')),
       );
     } catch (e) {
       print("Fehler beim Speichern der Auswahl: $e");
@@ -53,7 +59,9 @@ class _SelectionScreenState extends State<SelectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: btnColor2,
         title: const Text('Helfer-App'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -69,6 +77,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
+            opacity: 0.2,
             image: AssetImage(
                 'assets/hintergrund.png'), // Pfad zum Hintergrundbild
             fit: BoxFit.cover,
@@ -88,8 +97,8 @@ class _SelectionScreenState extends State<SelectionScreen> {
                     height: 100,
                     decoration: BoxDecoration(
                       color: selected[index]
-                          ? Color.fromRGBO(246, 146, 4, 1.0)
-                          : Color.fromRGBO(188, 22, 50, 1.0),
+                          ? const Color.fromRGBO(246, 146, 4, 1.0)
+                          : const Color.fromRGBO(188, 22, 50, 1.0),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Center(

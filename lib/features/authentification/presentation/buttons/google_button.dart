@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/config/fonts.dart';
+
 //import 'package:helfer_app/features/authentification/presentation/buttons/google.dart';
 
 class GoogleBtn1 extends StatelessWidget {
@@ -24,6 +25,7 @@ class GoogleBtn1 extends StatelessWidget {
         style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15)))),
+        onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -44,7 +46,6 @@ class GoogleBtn1 extends StatelessWidget {
             ),
           ],
         ),
-        onPressed: onPressed,
       ),
     );
   }
