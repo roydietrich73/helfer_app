@@ -29,7 +29,7 @@ class BasicScreen extends StatelessWidget {
             //einfügen von weiteren funktionen
             ),
       ),
-      bottomNavigationBar: btnNavBar(),
+      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

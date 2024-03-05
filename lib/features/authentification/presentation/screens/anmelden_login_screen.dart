@@ -4,10 +4,12 @@ import 'package:helfer_app/features/authentification/presentation/buttons/apple_
 import 'package:helfer_app/features/authentification/presentation/buttons/google_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/login_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/registrieren_button.dart';
+import 'package:helfer_app/features/authentification/presentation/register_form.dart';
 import 'package:helfer_app/features/authentification/presentation/screens/login_apple.dart';
 import 'package:helfer_app/features/authentification/presentation/screens/login_google.dart';
 import 'package:helfer_app/features/authentification/presentation/screens/login_page.dart';
-import 'package:helfer_app/features/authentification/presentation/screens/registrieren.dart';
+//import 'package:helfer_app/features/authentification/presentation/screens/registrieren.dart';
+import 'package:helfer_app/features/home/home_screen.dart';
 //import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 class AnmeldenLogin extends StatelessWidget {
@@ -52,7 +54,10 @@ class AnmeldenLogin extends StatelessWidget {
               ),
               LoginBtn1(
                 onPressed: () {
-                  _navigateToLogin(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()));
                 },
               ),
               const SizedBox(
@@ -60,7 +65,10 @@ class AnmeldenLogin extends StatelessWidget {
               ),
               GoogleBtn1(
                   onPressed: () {
-                    LoginWithGooglePage;
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LoginWithGooglePage()));
                   },
                   child: const Text('Mit Google anmelden')),
               const SizedBox(
@@ -68,7 +76,8 @@ class AnmeldenLogin extends StatelessWidget {
               ),
               AppleBtn1(
                   onPressed: () {
-                    LoginApple;
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginApple()));
                   },
                   child: const Text('Mit Apple anmelden')),
               const SizedBox(
@@ -88,7 +97,7 @@ class AnmeldenLogin extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const Registrieren()),
+                        builder: (context) => const RegisterForm()),
                   );
                 },
               ),

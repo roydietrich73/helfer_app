@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/google_button.dart';
 import 'package:helfer_app/features/btn_nav_bar.dart';
 import 'package:helfer_app/features/home/home_screen.dart';
 
-abstract class LoginWithGooglePage extends StatelessWidget {
+class LoginWithGooglePage extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
+
+  LoginWithGooglePage({super.key});
 
   Future<UserCredential> _signInWithGoogle() async {
     try {
@@ -31,7 +34,9 @@ abstract class LoginWithGooglePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        backgroundColor: btnColor2,
         title: const Text('Helfer-App'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -47,8 +52,8 @@ abstract class LoginWithGooglePage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-                'assets/hintergrund.png'), // Pfad zum Hintergrundbild
+            opacity: 0.2,
+            image: AssetImage('assets/hintergrund.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -73,11 +78,11 @@ abstract class LoginWithGooglePage extends StatelessWidget {
               }
               ;
             },
-            child: Text('Mit Google anmelden'),
+            child: const Text('Mit Google anmelden'),
           ),
         ),
       ),
-      bottomNavigationBar: btnNavBar(),
+      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

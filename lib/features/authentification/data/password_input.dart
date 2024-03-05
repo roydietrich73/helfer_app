@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PwI extends StatefulWidget {
+  const PwI({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _PasswordInputState createState() => _PasswordInputState();
 }
 
@@ -20,7 +23,7 @@ class _PasswordInputState extends State<PwI> {
           TextField(
             controller: passwordController,
             obscureText: true,
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
             decoration: InputDecoration(
               labelText: 'Password',
               errorText: _isValid ? null : 'Falsches Password',
@@ -28,10 +31,10 @@ class _PasswordInputState extends State<PwI> {
                 borderRadius: BorderRadius.circular(20.0),
               ),
               contentPadding:
-                  EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
         ],
       ),
     );
@@ -51,7 +54,7 @@ class _PasswordInputState extends State<PwI> {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setString('password', password);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Password saved successfully'),
         ),
       );

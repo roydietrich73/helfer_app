@@ -11,26 +11,37 @@ class StartScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: btnColor2,
-        title: const Text('Startbildschirm'),
+        title: const Text('Helfer-App'),
       ),
-      body: const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: UserList(
-              title: 'Hilfe Anbieten',
-              offerHelp: true,
-              helpType: '',
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            opacity: 0.2,
+            image: AssetImage('assets/hintergrund.png'),
+            fit: BoxFit.cover,
           ),
-          Expanded(
-            child: UserList(
-              title: 'Hilfe Suchen',
-              offerHelp: false,
-              helpType: '',
-            ),
-          ),
-        ],
+        ),
+        child: const Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: UserList(
+                  title: 'Hilfe Anbieten',
+                  offerHelp: true,
+                  helpType: '',
+                ),
+              ),
+              Expanded(
+                child: UserList(
+                  title: 'Hilfe Suchen',
+                  offerHelp: false,
+                  helpType: '',
+                ),
+              ),
+            ],
+          ), //einfügen von weiteren funktionen
+        ),
       ),
     );
   }

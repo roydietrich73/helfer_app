@@ -40,7 +40,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
         'selectedCategories': selectedCategories,
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Auswahl gespeichert')),
+        const SnackBar(content: Text('Auswahl gespeichert')),
       );
     } catch (e) {
       print("Fehler beim Speichern der Auswahl: $e");

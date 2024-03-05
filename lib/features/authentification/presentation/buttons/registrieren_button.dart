@@ -23,13 +23,13 @@ class RegistrierenBtn1 extends StatelessWidget {
         style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15)))),
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
+            SizedBox(
               width: 10,
             ),
-            const Text(
+            Text(
               "Registrieren",
               style: TextStyle(
                 color: Colors.black,

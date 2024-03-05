@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 class ChangePasswordDialog extends StatefulWidget {
   final Function(String) changePassword;
 
-  const ChangePasswordDialog({required this.changePassword});
+  const ChangePasswordDialog({super.key, required this.changePassword});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ChangePasswordDialogState createState() => _ChangePasswordDialogState();
 }
 
@@ -24,18 +25,18 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Passwort ändern'),
+      title: const Text('Passwort ändern'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           TextField(
             controller: _newPasswordController,
-            decoration: InputDecoration(labelText: 'Neues Passwort'),
+            decoration: const InputDecoration(labelText: 'Neues Passwort'),
             obscureText: true,
           ),
           TextField(
             controller: _confirmPasswordController,
-            decoration: InputDecoration(labelText: 'Passwort bestätigen'),
+            decoration: const InputDecoration(labelText: 'Passwort bestätigen'),
             obscureText: true,
             onChanged: (value) {
               setState(() {
@@ -44,7 +45,7 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
             },
           ),
           if (!_passwordsMatch)
-            Text(
+            const Text(
               'Passwörter stimmen nicht überein',
               style: TextStyle(color: Colors.red),
             ),
@@ -53,7 +54,7 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: Text('Abbrechen'),
+          child: const Text('Abbrechen'),
         ),
         ElevatedButton(
           onPressed: _passwordsMatch
@@ -62,7 +63,7 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
                   Navigator.of(context).pop();
                 }
               : null,
-          child: Text('Speichern'),
+          child: const Text('Speichern'),
         ),
       ],
     );

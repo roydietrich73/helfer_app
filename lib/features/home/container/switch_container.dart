@@ -32,47 +32,42 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Container Toggle'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Visibility(
-              visible: isContainer1Visible,
-              child: Container(
-                width: 200,
-                height: 100,
-                color: container1Color,
-                alignment: Alignment.center,
-                child: Text(
-                  'Container 1',
-                  style: TextStyle(color: Colors.white),
-                ),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Visibility(
+            visible: isContainer1Visible,
+            child: Container(
+              width: 200,
+              height: 100,
+              color: container1Color,
+              alignment: Alignment.center,
+              child: const Text(
+                'Container 1',
+                style: TextStyle(color: Colors.white),
               ),
             ),
-            Visibility(
-              visible: !isContainer1Visible,
-              child: Container(
-                width: 200,
-                height: 100,
-                color: container2Color,
-                alignment: Alignment.center,
-                child: Text(
-                  'Container 2',
-                  style: TextStyle(color: Colors.white),
-                ),
+          ),
+          Visibility(
+            visible: !isContainer1Visible,
+            child: Container(
+              width: 200,
+              height: 100,
+              color: container2Color,
+              alignment: Alignment.center,
+              child: const Text(
+                'Container 2',
+                style: TextStyle(color: Colors.white),
               ),
             ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: toggleContainers,
-              child: Text('Toggle'),
-            ),
-          ],
-        ),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: toggleContainers,
+            child: const Text('Toggle'),
+          ),
+        ],
       ),
     );
   }

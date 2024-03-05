@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: <Widget>[
                   GestureDetector(
                     onTap: () {
-                      ToggleColorApp();
+                      const ToggleColorApp();
                     },
                     child: FirstContainer(color1: _color1),
                   ),
@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      ToggleColorApp();
+                      const ToggleColorApp();
                     },
                     child: NewContainer(color2: _color2),
                   ),
@@ -86,8 +86,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Sizes.gapH100,
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SelectionScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SelectionScreen()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: btnColor,
@@ -102,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: btnNavBar(),
+      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

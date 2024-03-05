@@ -7,6 +7,7 @@ class ProfilePicture extends StatelessWidget {
   final VoidCallback onTap;
 
   const ProfilePicture({
+    super.key,
     required this.image,
     required this.onTap,
   });

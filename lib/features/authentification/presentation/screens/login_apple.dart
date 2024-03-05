@@ -2,13 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:helfer_app/config/colors.dart';
+import 'package:helfer_app/features/btn_nav_bar.dart';
 import 'package:helfer_app/features/home/home_screen.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 //import 'package:firebase_core/firebase_core.dart';
 //import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 //import 'package:flutter_auth_provider/flutter_auth_provider.dart';
 
-abstract class LoginApple extends StatelessWidget {
+class LoginApple extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -58,15 +60,23 @@ abstract class LoginApple extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text('Login mit Apple Beispiel'),
+        backgroundColor: btnColor2,
+        title: const Text('Login mit Apple '),
       ),
-      body: Center(
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                opacity: 0.2,
+                image: AssetImage('assets/hintergrund.png'),
+                fit: BoxFit.cover)),
         child: ElevatedButton(
           onPressed: () => _signInWithApple(context),
           child: const Text('Mit Apple anmelden'),
         ),
       ),
+      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

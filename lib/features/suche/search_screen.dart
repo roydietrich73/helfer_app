@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HelpOfferSearchScreen extends StatefulWidget {
+  const HelpOfferSearchScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _HelpOfferSearchScreenState createState() => _HelpOfferSearchScreenState();
 }
 
 class _HelpOfferSearchScreenState extends State<HelpOfferSearchScreen> {
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
   Stream<QuerySnapshot>? _helpOffersStream;
 
   @override
@@ -35,18 +38,18 @@ class _HelpOfferSearchScreenState extends State<HelpOfferSearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hilfsangebote suchen'),
+        title: const Text('Hilfsangebote suchen'),
       ),
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
                 labelText: 'Kategorie eingeben',
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.clear),
+                  icon: const Icon(Icons.clear),
                   onPressed: () {
                     _searchController.clear();
                   },
@@ -64,7 +67,7 @@ class _HelpOfferSearchScreenState extends State<HelpOfferSearchScreen> {
 
   Widget _buildHelpOfferList() {
     if (_helpOffersStream == null) {
-      return Center(
+      return const Center(
         child: Text('Geben Sie eine Kategorie ein, um zu suchen.'),
       );
     } else {
@@ -72,19 +75,19 @@ class _HelpOfferSearchScreenState extends State<HelpOfferSearchScreen> {
         stream: _helpOffersStream,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return Center(
+            return const Center(
               child: Text('Fehler beim Laden der Daten'),
             );
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }
 
           if (snapshot.data!.docs.isEmpty) {
-            return Center(
+            return const Center(
               child: Text('Keine Hilfsangebote gefunden.'),
             );
           }

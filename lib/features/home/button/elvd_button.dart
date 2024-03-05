@@ -12,9 +12,9 @@ class ElvdButton extends StatelessWidget {
     return ElevatedButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => SelectionScreen()));
+              MaterialPageRoute(builder: (context) => const SelectionScreen()));
         },
-        child: Text(
+        child: const Text(
           'Weiter',
           style: TextStyle(fontSize: 20),
         ),

@@ -1,10 +1,15 @@
+// ignore_for_file: avoid_print, sort_child_properties_last
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/btn_nav_bar.dart';
 
 class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _SettingsScreenState createState() => _SettingsScreenState();
 }
 
@@ -114,7 +119,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: btnNavBar(),
+      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

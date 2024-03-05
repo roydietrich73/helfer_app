@@ -6,6 +6,7 @@ class ProfileTextField extends StatelessWidget {
   final bool enabled;
 
   const ProfileTextField({
+    super.key,
     required this.controller,
     required this.labelText,
     this.enabled = true,

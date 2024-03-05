@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:helfer_app/common/app_provider/app_provider.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/login_button.dart';
 import 'package:helfer_app/features/btn_nav_bar.dart';
 import 'package:helfer_app/features/home/home_screen.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -23,7 +25,7 @@ class LoginScreen extends StatelessWidget {
       });
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     } catch (e) {
       print("Fehler bei der Anmeldung: $e");
@@ -58,13 +60,16 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               LoginBtn1(
-                onPressed: () => _login(context),
+                onPressed: () {
+                  Provider.of<NavigationProvider>(context, listen: false)
+                      .navigateToPage(context, '/second');
+                },
               ),
             ],
           ),
         ],
       ),
-      bottomNavigationBar: btnNavBar(),
+      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

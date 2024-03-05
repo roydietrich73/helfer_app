@@ -24,7 +24,7 @@ class AppleBtn1 extends StatelessWidget {
         style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15)))),
-        onPressed: onPressed,
+        onPressed: onPressed, //,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

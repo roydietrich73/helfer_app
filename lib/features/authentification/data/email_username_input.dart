@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class EmailUsernameInput extends StatefulWidget {
+  const EmailUsernameInput({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _EmailUsernameInputState createState() => _EmailUsernameInputState();
 }
 
@@ -20,7 +23,7 @@ class _EmailUsernameInputState extends State<EmailUsernameInput> {
           TextField(
             controller: emailController,
             obscureText: false,
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
             decoration: InputDecoration(
               labelText: 'Email or Username',
               errorText: _isValid ? null : 'Invalid input',
@@ -53,7 +56,7 @@ class _EmailUsernameInputState extends State<EmailUsernameInput> {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setString('emailUsername', input);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Input saved successfully'),
         ),
       );
