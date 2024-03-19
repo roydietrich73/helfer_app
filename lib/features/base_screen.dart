@@ -12,10 +12,6 @@ class BasicScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: btnColor2,
         title: const Text('Helfer-App'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
-        ),
       ),
       body: Container(
         decoration: const BoxDecoration(

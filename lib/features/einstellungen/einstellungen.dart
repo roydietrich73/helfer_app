@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/btn_nav_bar.dart';
+import 'package:helfer_app/features/einstellungen/settings_bloc.dart';
+import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -68,57 +70,67 @@ class _SettingsScreenState extends State<SettingsScreen> {
         backgroundColor: btnColor2,
         title: const Text('Einstellungen'),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16.0),
-        children: [
-          DropdownButtonFormField(
-            value: _color,
-            items: const [
-              DropdownMenuItem(child: Text('Blau'), value: 'blue'),
-              DropdownMenuItem(child: Text('Grün'), value: 'green'),
-              DropdownMenuItem(child: Text('Rot'), value: 'red'),
+      body: Consumer<SettingsBloc>(builder: (context, settingsBloc, _) {
+        return ListView(children: <Widget>[
+          SwitchListTile(
+            value: settingsBloc.settings.notificationsEnabled,
+            onChanged: (value) {
+              settingsBloc.updateNotifications(value);
+            },
+          ),
+          ListView(
+            padding: const EdgeInsets.all(16.0),
+            children: [
+              DropdownButtonFormField(
+                value: _color,
+                items: const [
+                  DropdownMenuItem(child: Text('Blau'), value: 'blue'),
+                  DropdownMenuItem(child: Text('Grün'), value: 'green'),
+                  DropdownMenuItem(child: Text('Rot'), value: 'red'),
+                ],
+                onChanged: (value) {
+                  setState(() {
+                    _color = value.toString();
+                  });
+                },
+                decoration: const InputDecoration(labelText: 'Farbe'),
+              ),
+              SwitchListTile(
+                title: const Text('Lupe anzeigen'),
+                value: _showMagnifier,
+                onChanged: (value) {
+                  setState(() {
+                    _showMagnifier = value;
+                  });
+                },
+              ),
+              SwitchListTile(
+                title: const Text('Verlauf anzeigen'),
+                value: _showHistory,
+                onChanged: (value) {
+                  setState(() {
+                    _showHistory = value;
+                  });
+                },
+              ),
+              SwitchListTile(
+                title: const Text('Hilfe aktivieren'),
+                value: _helpEnabled,
+                onChanged: (value) {
+                  setState(() {
+                    _helpEnabled = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: saveSettings,
+                child: const Text('Einstellungen speichern'),
+              ),
             ],
-            onChanged: (value) {
-              setState(() {
-                _color = value.toString();
-              });
-            },
-            decoration: const InputDecoration(labelText: 'Farbe'),
           ),
-          SwitchListTile(
-            title: const Text('Lupe anzeigen'),
-            value: _showMagnifier,
-            onChanged: (value) {
-              setState(() {
-                _showMagnifier = value;
-              });
-            },
-          ),
-          SwitchListTile(
-            title: const Text('Verlauf anzeigen'),
-            value: _showHistory,
-            onChanged: (value) {
-              setState(() {
-                _showHistory = value;
-              });
-            },
-          ),
-          SwitchListTile(
-            title: const Text('Hilfe aktivieren'),
-            value: _helpEnabled,
-            onChanged: (value) {
-              setState(() {
-                _helpEnabled = value;
-              });
-            },
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: saveSettings,
-            child: const Text('Einstellungen speichern'),
-          ),
-        ],
-      ),
+        ]);
+      }),
       bottomNavigationBar: const btnNavBar(),
     );
   }

@@ -1,6 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:helfer_app/features/chat/chat_bloc/chat_bloc.dart';
+import 'package:helfer_app/features/chat/chat_model/chat_model.dart';
+import 'package:helfer_app/features/chat/chat_screen/chat_screen.dart';
 import 'package:helfer_app/features/profil/change_password_dialog.dart';
 import 'package:helfer_app/features/profil/profile_picture.dart';
 import 'package:helfer_app/features/profil/profile_text_field.dart';
@@ -27,6 +29,10 @@ class _ProfilePageState extends State<ProfilePage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseStorage _storage = FirebaseStorage.instance;
+
+  get userId => null;
+
+  get otherUserId => null;
 
   @override
   void initState() {
@@ -134,6 +140,20 @@ class _ProfilePageState extends State<ProfilePage> {
                 );
               },
               child: const Text('Passwort ändern'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                ChatBloc().createChat(
+                    ChatModel(userId: userId, otherUserId: otherUserId));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          ChatScreen(userId: userId, otherUserId: otherUserId)),
+                );
+              },
+              child: Text('Chat'),
             ),
           ],
         ),

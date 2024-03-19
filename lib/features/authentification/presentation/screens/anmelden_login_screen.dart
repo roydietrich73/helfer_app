@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/fonts.dart';
-import 'package:helfer_app/features/authentification/presentation/buttons/apple_button.dart';
-import 'package:helfer_app/features/authentification/presentation/buttons/google_button.dart';
-import 'package:helfer_app/features/authentification/presentation/buttons/login_button.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/apple/apple_button.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/google/google_button.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/login/login_button.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/registrieren_button.dart';
-import 'package:helfer_app/features/authentification/presentation/register_form.dart';
-import 'package:helfer_app/features/authentification/presentation/screens/login_apple.dart';
-import 'package:helfer_app/features/authentification/presentation/screens/login_google.dart';
-import 'package:helfer_app/features/authentification/presentation/screens/login_page.dart';
-//import 'package:helfer_app/features/authentification/presentation/screens/registrieren.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/apple/login_apple.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/google/login_google.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/login/login_page.dart';
 import 'package:helfer_app/features/home/home_screen.dart';
-//import 'package:sign_in_with_apple/sign_in_with_apple.dart';
+import '../register_form.dart';
 
 class AnmeldenLogin extends StatelessWidget {
 //final DatabaseRepository databaseRepository;
 
   const AnmeldenLogin({super.key}); //required this.databaseRepository,});
 
+  // ignore: unused_element
   void _navigateToLogin(BuildContext context) {
     Navigator.push(
       context,
@@ -55,9 +54,9 @@ class AnmeldenLogin extends StatelessWidget {
               LoginBtn1(
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomeScreen()));
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  );
                 },
               ),
               const SizedBox(
@@ -66,9 +65,10 @@ class AnmeldenLogin extends StatelessWidget {
               GoogleBtn1(
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => LoginWithGooglePage()));
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LoginWithGooglePage()),
+                    );
                   },
                   child: const Text('Mit Google anmelden')),
               const SizedBox(
@@ -76,8 +76,11 @@ class AnmeldenLogin extends StatelessWidget {
               ),
               AppleBtn1(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginApple()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginApple()),
+                    );
                   },
                   child: const Text('Mit Apple anmelden')),
               const SizedBox(

@@ -62,17 +62,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: btnColor2,
-        title: const Text(''),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {},
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-          ),
-        ],
+        title: const Text('Auswahl'),
       ),
       body: Container(
         decoration: const BoxDecoration(

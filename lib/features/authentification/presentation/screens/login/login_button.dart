@@ -24,6 +24,7 @@ class LoginBtn1 extends StatelessWidget {
         style: ButtonStyle(
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15)))),
+        onPressed: onPressed,
         child: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -40,7 +41,6 @@ class LoginBtn1 extends StatelessWidget {
             ),
           ],
         ),
-        onPressed: onPressed,
       ),
     );
   }

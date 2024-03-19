@@ -11,7 +11,7 @@ class StartScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: btnColor2,
-        title: const Text('Helfer-App'),
+        title: const Text('Was suchen sie?'),
       ),
       body: Container(
         decoration: const BoxDecoration(

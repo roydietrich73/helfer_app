@@ -1,29 +1,17 @@
+import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:helfer_app/config/colors.dart';
-import 'package:helfer_app/features/btn_nav_bar.dart';
+import 'package:helfer_app/features/authentification/presentation/screens/apple/apple_button.dart';
 import 'package:helfer_app/features/home/home_screen.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
-//import 'package:firebase_core/firebase_core.dart';
-//import 'package:sign_in_with_apple/sign_in_with_apple.dart';
-//import 'package:flutter_auth_provider/flutter_auth_provider.dart';
 
-class LoginApple extends StatelessWidget {
+class AppleContainer extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  LoginApple({super.key});
-
-  /*Future<UserCredential> signInWithApple()async{
-    final appleProvider = AppleAuthProvider();
-    if (kIsWeb) {
-      await FirebaseAuth.instance.signInWithPopup(appleProvider);
-    }else{
-      await FirebaseAuth.instance.signInWithProvider(appleProvider);
-    }
-  }*/
+  AppleContainer({Key? key}) : super(key: key);
 
   Future<void> _signInWithApple(BuildContext context) async {
     try {
@@ -56,27 +44,20 @@ class LoginApple extends StatelessWidget {
       print("Fehler beim Anmelden mit Apple: $error");
     }
   }
+  //
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        backgroundColor: btnColor2,
-        title: const Text('Login mit Apple '),
+    return Container(
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              opacity: 0.2,
+              image: AssetImage('assets/hintergrund.png'),
+              fit: BoxFit.cover)),
+      child: AppleBtn1(
+        onPressed: () => _signInWithApple(context),
+        child: const Text('Mit Apple anmelden'),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                opacity: 0.2,
-                image: AssetImage('assets/hintergrund.png'),
-                fit: BoxFit.cover)),
-        child: ElevatedButton(
-          onPressed: () => _signInWithApple(context),
-          child: const Text('Mit Apple anmelden'),
-        ),
-      ),
-      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

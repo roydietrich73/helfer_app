@@ -38,7 +38,7 @@ class _HelpOfferSearchScreenState extends State<HelpOfferSearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hilfsangebote suchen'),
+        title: const Text('Suchen'),
       ),
       body: Column(
         children: [
