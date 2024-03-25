@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/authentification/presentation/buttons/registrieren_button.dart';
-import 'package:helfer_app/features/home/home_screen.dart';
+import 'package:helfer_app/features/3/home/home_screen.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});

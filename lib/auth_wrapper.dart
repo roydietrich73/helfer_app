@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/features/authentification/presentation/auth_model.dart';
-import 'package:helfer_app/features/authentification/presentation/screens/login/login_page.dart';
-import 'package:helfer_app/features/home/home_screen.dart';
+import 'package:helfer_app/features/login/screens/login/login_screen.dart';
+import 'package:helfer_app/features/3/home/home_screen.dart';
 import 'package:provider/provider.dart';
 
 class AuthWrapper extends StatelessWidget {
