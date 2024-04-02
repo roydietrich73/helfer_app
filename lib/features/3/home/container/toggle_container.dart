@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helfer_app/config/colors.dart';
 
 class ToggleColorApp extends StatefulWidget {
   const ToggleColorApp({super.key});
@@ -32,14 +33,7 @@ class _ToggleColorAppState extends State<ToggleColorApp> {
             child: Container(
               width: 100,
               height: 100,
-              color: isFirstContainerSelected
-                  ? const Color.fromRGBO(
-                      188,
-                      22,
-                      50,
-                      1.0,
-                    )
-                  : const Color.fromRGBO(244, 208, 157, 1.0),
+              color: isFirstContainerSelected ? chtColor2 : btnColor,
             ),
           ),
           const SizedBox(height: 20),
@@ -50,7 +44,7 @@ class _ToggleColorAppState extends State<ToggleColorApp> {
             child: Container(
               width: 100,
               height: 100,
-              color: isNewContainerSelected ? Colors.red : Colors.blue,
+              color: isNewContainerSelected ? btnColor : chtColor2,
               child: const Center(
                 child: Text(
                   '',

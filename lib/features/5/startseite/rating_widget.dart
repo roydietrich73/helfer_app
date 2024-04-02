@@ -27,7 +27,7 @@ class _RatingWidgetState extends State<RatingWidget> {
             return IconButton(
               icon: Icon(
                 index < _rating ? Icons.star : Icons.star_border,
-                color: Colors.yellow,
+                color: Colors.red,
               ),
               onPressed: () {
                 setState(() {

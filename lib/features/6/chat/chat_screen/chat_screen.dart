@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
-import 'package:helfer_app/features/btn_nav_bar.dart';
+import 'package:helfer_app/features/bottom_navigation_bar/btn_nav_bar.dart';
 
 class ChatScreen extends StatelessWidget {
   final String userId;

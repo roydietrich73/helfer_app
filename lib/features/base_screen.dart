@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
-import 'package:helfer_app/features/btn_nav_bar.dart';
+import 'package:helfer_app/features/bottom_navigation_bar/btn_nav_bar.dart';
 
 class BasicScreen extends StatelessWidget {
   const BasicScreen({super.key});
@@ -30,7 +30,7 @@ class BasicScreen extends StatelessWidget {
   }
 }
 
-class BaseScreen extends StatelessWidget {
+/*class BaseScreen extends StatelessWidget {
   const BaseScreen({super.key});
 
   @override
@@ -62,4 +62,4 @@ class BaseScreen extends StatelessWidget {
       ),
     );
   }
-}
+}*/

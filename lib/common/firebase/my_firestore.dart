@@ -33,8 +33,6 @@ class MyFirestore {
     }
   }
 }
-/*
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirestoreRepository {
   final CollectionReference _usersCollection =
@@ -53,7 +51,8 @@ class FirestoreRepository {
     return userData.data() as Map<String, dynamic>;
   }
 
-  Future<void> saveSettings(String userId, Map<String, dynamic> settingsData) async {
+  Future<void> saveSettings(
+      String userId, Map<String, dynamic> settingsData) async {
     await _settingsCollection.doc(userId).set(settingsData);
   }
 
@@ -62,7 +61,8 @@ class FirestoreRepository {
     return settingsData.data() as Map<String, dynamic>;
   }
 
-  Future<void> saveProfile(String userId, Map<String, dynamic> profileData) async {
+  Future<void> saveProfile(
+      String userId, Map<String, dynamic> profileData) async {
     await _profilesCollection.doc(userId).set(profileData);
   }
 
@@ -71,11 +71,9 @@ class FirestoreRepository {
     return profileData.data() as Map<String, dynamic>;
   }
 }
-
+/*
 //aufruf in einer beispielseite
 
-import 'package:flutter/material.dart';
-import 'package:your_app_name/firebase_repository.dart';
 
 class UserProfilePage extends StatefulWidget {
   final String userId;
@@ -99,9 +97,11 @@ class _UserProfilePageState extends State<UserProfilePage> {
         future: _repository.getProfile(widget.userId),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Center(
+              child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(
+              child: Text('Error: ${snapshot.error}'));
           } else {
             final profileData = snapshot.data;
             // Zeigen Sie die Profildaten an oder verwenden Sie sie wie gewünscht

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/5/startseite/build_user_list.dart';
-import 'package:helfer_app/features/btn_nav_bar.dart';
+import 'package:helfer_app/features/bottom_navigation_bar/btn_nav_bar.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});

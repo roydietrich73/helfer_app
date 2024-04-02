@@ -7,7 +7,7 @@ import 'package:helfer_app/features/6/chat/chat_screen/chat_screen.dart';
 import 'package:helfer_app/features/8/profil/change_password_dialog.dart';
 import 'package:helfer_app/features/8/profil/profile_picture.dart';
 import 'package:helfer_app/features/8/profil/profile_text_field.dart';
-import 'package:helfer_app/features/btn_nav_bar.dart';
+import 'package:helfer_app/features/bottom_navigation_bar/btn_nav_bar.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -42,6 +42,13 @@ class _ProfilePageState extends State<ProfilePage> {
     _user = _auth.currentUser;
     _fetchUserData();
   }
+
+  //// [Auslagern]
+  /// Aufagben:
+  /// Ropositorys fuer jedes Kontrekte Feature ein Reposiotory
+  /// Methoden in Repositorys auslagern
+  /// Methode in der Ui aufrufen
+  /// Funktionalitaet kontrollieren
 
   Future<void> _fetchUserData() async {
     final userData = await _firestore.collection('users').doc(_user!.uid).get();
@@ -88,6 +95,7 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
+  ////
   @override
   Widget build(BuildContext context) {
     return Scaffold(

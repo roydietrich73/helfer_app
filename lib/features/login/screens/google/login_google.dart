@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:helfer_app/config/colors.dart';
-import 'package:helfer_app/features/btn_nav_bar.dart';
+import 'package:helfer_app/features/bottom_navigation_bar/btn_nav_bar.dart';
 import 'google_container.dart';
 
 class LoginWithGooglePage extends StatelessWidget {

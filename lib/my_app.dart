@@ -32,38 +32,31 @@ class MyApp extends StatelessWidget {
     return StreamBuilder<User?>(
         stream: authBloc.userStream,
         builder: (context, snapshot) {
-          if (false) {
-          } else {
-            return MultiProvider(
-              providers: [
-                ChangeNotifierProvider(
-                  create: (context) => AuthNotifier(),
-                ),
-                ChangeNotifierProvider(
-                    create: (context) => NavigationProvider()),
-                //ChangeNotifierProvider<AuthBloc>(create: (_) => AuthBloc()),
-                //ChangeNotifierProvider<ChatBloc>(create: (_) => ChatBloc()),
-                //ChangeNotifierProvider<SettingsBloc>(create: (_) => SettingsBloc()),
-              ],
-              child: MaterialApp(
-                  theme: MyAppTheme.lightTheme(),
-                  initialRoute: '/splash',
-                  routes: {
-                    '/splash': (context) => const SplashScreen(),
-                    '/login': (context) => const AnmeldenLogin(),
-                    '/home': (context) => const HomeScreen(),
-                    '/selection': (context) => const SelectionScreen(),
-                    '/start': (context) => const StartScreen(),
-                    '/chat': (context) => ChatScreen(
-                          userId: userId,
-                          otherUserId: otherUserId,
-                        ),
-                    '/einstellungen': (context) => const SettingsScreen(),
-                    '/profil': (context) => const ProfilePage(),
-                    '/search': (context) => const HelpOfferSearchScreen(),
-                  }),
-            );
-          }
+          return MultiProvider(
+            providers: [
+              ChangeNotifierProvider(
+                create: (context) => AuthNotifier(),
+              ),
+              ChangeNotifierProvider(create: (context) => NavigationProvider()),
+            ],
+            child: MaterialApp(
+                theme: MyAppTheme.lightTheme(),
+                initialRoute: '/splash',
+                routes: {
+                  '/splash': (context) => const SplashScreen(),
+                  '/login': (context) => const AnmeldenLogin(),
+                  '/home': (context) => const HomeScreen(),
+                  '/selection': (context) => const SelectionScreen(),
+                  '/start': (context) => const StartScreen(),
+                  '/chat': (context) => ChatScreen(
+                        userId: userId,
+                        otherUserId: otherUserId,
+                      ),
+                  '/einstellungen': (context) => const SettingsScreen(),
+                  '/profil': (context) => const ProfilePage(),
+                  '/search': (context) => const HelpOfferSearchScreen(),
+                }),
+          );
         });
   }
 }

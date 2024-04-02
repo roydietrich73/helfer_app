@@ -7,5 +7,6 @@ class ChatBloc with ChangeNotifier {
 
   void createChat(ChatModel chat) {
     _repository.getMessagesStream();
+    notifyListeners();
   }
 }

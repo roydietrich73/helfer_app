@@ -1,26 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:helfer_app/config/colors.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class SwitchPage extends StatefulWidget {
+  const SwitchPage({super.key});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  Color container1Color = Colors.red;
-  Color container2Color = Colors.blue;
+class _MyHomePageState extends State<SwitchPage> {
+  Color container1Color = btnColor;
+  Color container2Color = chtColor2;
   bool isContainer1Visible = true;
 
   void toggleContainers() {
@@ -48,8 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
               color: container1Color,
               alignment: Alignment.center,
               child: const Text(
-                'Container 1',
-                style: TextStyle(color: Colors.white),
+                'Hilfe suchen',
+                style: TextStyle(color: Colors.grey),
               ),
             ),
           ),
@@ -61,8 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
               color: container2Color,
               alignment: Alignment.center,
               child: const Text(
-                'Container 2',
-                style: TextStyle(color: Colors.white),
+                'Hilfe anbieten',
+                style: TextStyle(color: Colors.grey),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helfer_app/config/colors.dart';
 
 class FirstContainer extends StatelessWidget {
   const FirstContainer({
@@ -18,7 +19,7 @@ class FirstContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.8),
+              color: btnColor.withOpacity(0.8),
               spreadRadius: 5,
               blurRadius: 7,
               offset: const Offset(0, 3),

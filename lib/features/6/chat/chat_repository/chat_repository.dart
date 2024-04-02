@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
+
 import 'package:helfer_app/features/6/chat/chat_message/chat_message.dart';
 
-class ChatRepository with ChangeNotifier {
+class ChatRepository {
   final CollectionReference<Map<String, dynamic>> _messagesCollection =
       FirebaseFirestore.instance.collection('messages');
 
@@ -31,8 +31,6 @@ class ChatRepository with ChangeNotifier {
 
       // Falls erforderlich, aktualisieren Sie _messages lokal
       _messages.add(ChatMessage(text: text, timestamp: DateTime.now()));
-
-      notifyListeners();
     } catch (error) {
       rethrow;
     }
@@ -40,6 +38,5 @@ class ChatRepository with ChangeNotifier {
 
   void clearMessage() {
     _messages.clear();
-    notifyListeners();
   }
 }

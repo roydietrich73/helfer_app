@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:helfer_app/config/colors.dart';
-import 'package:helfer_app/features/btn_nav_bar.dart';
+import 'package:helfer_app/features/bottom_navigation_bar/btn_nav_bar.dart';
 import 'package:helfer_app/features/7/einstellungen/settings_bloc.dart';
 import 'package:provider/provider.dart';
 
