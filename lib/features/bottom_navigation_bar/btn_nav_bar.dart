@@ -87,7 +87,8 @@ class _btnNavBarState extends State<btnNavBar> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => FavoriteScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const FavoriteScreen()),
                 );
               },
               defaultColor: btnColor,
@@ -100,11 +101,12 @@ class _btnNavBarState extends State<btnNavBar> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SettingsScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const SettingsScreen()),
                 );
               },
-              selectedColor: btnColor,
-              defaultColor: btnColor2,
+              selectedColor: btnColor2,
+              defaultColor: btnColor,
             ),
           ],
         ),

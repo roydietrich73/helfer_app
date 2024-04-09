@@ -4,14 +4,16 @@ import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/bottom_navigation_bar/btn_nav_bar.dart';
 
 class FavoriteScreen extends StatelessWidget {
+  const FavoriteScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: btnNavBar(),
+      bottomNavigationBar: const btnNavBar(),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: btnColor2,
-        title: const Text('Favorites'),
+        title: const Text('Favoriten'),
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('favorites').snapshots(),
@@ -28,16 +30,20 @@ class FavoriteScreen extends StatelessWidget {
             );
           }
 
-          if (snapshot.data.documents.isEmpty) {
+          final List<DocumentSnapshot<Map<String, dynamic>>> documents =
+              snapshot.data?.docs ?? [];
+
+          if (documents.isEmpty) {
             return const Center(
               child: Text('Noch keine Favoriten.'),
             );
           }
 
           return ListView.builder(
-            itemCount: snapshot.data.documents.length,
+            itemCount: documents.length,
             itemBuilder: (context, index) {
-              DocumentSnapshot favorite = snapshot.data.documents[index];
+              final DocumentSnapshot<Map<String, dynamic>> favorite =
+                  documents[index];
               return ListTile(
                 title: Text(favorite['name']),
                 subtitle: Text(favorite['description']),

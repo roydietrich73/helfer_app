@@ -10,18 +10,26 @@ class CustomContainer extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
 
-  Future<UserCredential?> _signInWithGoogle(BuildContext context) async {
+  Future<User?> _signInWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser!.authentication;
-      final AuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-      );
-      return await _auth.signInWithCredential(credential);
+      final GoogleSignInAccount? googleSignInAccount =
+          await googleSignIn.signIn();
+      if (googleSignInAccount != null) {
+        final GoogleSignInAuthentication googleSignInAuthentication =
+            await googleSignInAccount.authentication;
+        final AuthCredential credential = GoogleAuthProvider.credential(
+          accessToken: googleSignInAuthentication.accessToken,
+          idToken: googleSignInAuthentication.idToken,
+        );
+        final UserCredential authResult =
+            await _auth.signInWithCredential(credential);
+        final User? user = authResult.user;
+        return user;
+      } else {
+        return null;
+      }
     } catch (error) {
-      print(error);
+      print('Error signing in with Google: $error');
       return null;
     }
   }
@@ -38,11 +46,13 @@ class CustomContainer extends StatelessWidget {
       ),
       child: GoogleBtn1(
         onPressed: () async {
-          UserCredential? userCredential = await _signInWithGoogle(context);
-          if (userCredential != null) {
-            print('Signed in: ${userCredential.user}');
+          final User? user = await _signInWithGoogle();
+          if (user != null) {
+            // Anmeldung erfolgreich, handle den Zustand hier
+            print('User signed in: ${user.displayName}');
           } else {
-            print('Sign-in failed');
+            // Anmeldung fehlgeschlagen
+            print('Sign in failed');
           }
         },
         child: const Text('Mit Google anmelden'),

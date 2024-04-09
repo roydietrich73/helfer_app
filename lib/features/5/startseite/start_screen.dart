@@ -9,7 +9,6 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const btnNavBar(),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: btnColor2,
@@ -45,6 +44,7 @@ class StartScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const btnNavBar(),
     );
   }
 }

@@ -10,6 +10,8 @@ class DesicionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final notifier = Provider.of<AuthNotifier>(context);
-    return notifier.isUserLoggedIn ? StartScreen() : AnmeldenLogin();
+    return notifier.isUserLoggedIn
+        ? const StartScreen()
+        : const AnmeldenLogin();
   }
 }

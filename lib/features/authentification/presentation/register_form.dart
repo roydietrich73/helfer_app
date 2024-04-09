@@ -24,7 +24,7 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: btnColor2,
