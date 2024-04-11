@@ -1,11 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 //import 'package:helfer_app/features/authentification/presentation/screens/google/text_form_field_google.dart';
 import 'google_button.dart';
 
 class CustomContainer extends StatelessWidget {
-  CustomContainer({Key? key}) : super(key: key);
+  CustomContainer({super.key});
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -29,7 +30,9 @@ class CustomContainer extends StatelessWidget {
         return null;
       }
     } catch (error) {
-      print('Error signing in with Google: $error');
+      if (kDebugMode) {
+        print('Error signing in with Google: $error');
+      }
       return null;
     }
   }
@@ -49,10 +52,14 @@ class CustomContainer extends StatelessWidget {
           final User? user = await _signInWithGoogle();
           if (user != null) {
             // Anmeldung erfolgreich, handle den Zustand hier
-            print('User signed in: ${user.displayName}');
+            if (kDebugMode) {
+              print('User signed in: ${user.displayName}');
+            }
           } else {
             // Anmeldung fehlgeschlagen
-            print('Sign in failed');
+            if (kDebugMode) {
+              print('Sign in failed');
+            }
           }
         },
         child: const Text('Mit Google anmelden'),

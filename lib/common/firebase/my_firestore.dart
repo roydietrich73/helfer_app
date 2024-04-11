@@ -17,7 +17,7 @@ class MyFirestore {
       if (kDebugMode) {
         print('Error adding user: $e');
       }
-      throw e;
+      rethrow;
     }
   }
 
@@ -29,7 +29,7 @@ class MyFirestore {
       if (kDebugMode) {
         print('Error getting users: $e');
       }
-      throw e;
+      rethrow;
     }
   }
 }

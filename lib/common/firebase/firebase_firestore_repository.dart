@@ -10,7 +10,6 @@ class FirestoreRepository {
     try {
       await _collection.add(data);
     } catch (e) {
-      print('Fehler beim Hinzufügen des Dokuments: $e');
       rethrow;
     }
   }
@@ -20,7 +19,6 @@ class FirestoreRepository {
     try {
       await _collection.doc(documentId).update(data);
     } catch (e) {
-      print('Fehler beim Aktualisieren des Dokuments: $e');
       rethrow;
     }
   }
@@ -29,7 +27,6 @@ class FirestoreRepository {
     try {
       await _collection.doc(documentId).delete();
     } catch (e) {
-      print('Fehler beim Löschen des Dokuments: $e');
       rethrow;
     }
   }

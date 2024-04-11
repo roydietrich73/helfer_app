@@ -10,7 +10,8 @@ class AuthBloc with ChangeNotifier {
   User? _user;
   User? get user => _user;
 
-  StreamController<User?> _userController = StreamController<User?>.broadcast();
+  final StreamController<User?> _userController =
+      StreamController<User?>.broadcast();
   Stream<User?> get userStream => _userController.stream;
 
   AuthBloc() {
@@ -23,7 +24,7 @@ class AuthBloc with ChangeNotifier {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (error) {
-      throw error;
+      rethrow;
     }
   }
 
@@ -33,7 +34,7 @@ class AuthBloc with ChangeNotifier {
       await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
     } catch (error) {
-      throw error;
+      rethrow;
     }
   }
 
@@ -51,7 +52,7 @@ class AuthBloc with ChangeNotifier {
 
       await _auth.signInWithCredential(credential);
     } catch (error) {
-      throw error;
+      rethrow;
     }
   }
 

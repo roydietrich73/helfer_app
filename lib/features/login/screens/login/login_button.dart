@@ -8,8 +8,8 @@ class LoginBtn1 extends StatelessWidget {
   final Function() onPressed;
   const LoginBtn1({
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

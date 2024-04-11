@@ -7,8 +7,8 @@ class RegistrierenBtn1 extends StatelessWidget {
   final Function() onPressed;
   const RegistrierenBtn1({
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

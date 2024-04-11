@@ -44,7 +44,6 @@ class AnmeldenLogin extends StatelessWidget {
               ),
               LoginBtn1(
                 onPressed: () {
-                  print("Login");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => LoginScreen()),

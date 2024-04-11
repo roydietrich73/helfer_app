@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class EmailUsernameInput extends StatefulWidget {
   const EmailUsernameInput({super.key});
@@ -11,7 +10,7 @@ class EmailUsernameInput extends StatefulWidget {
 
 class _EmailUsernameInputState extends State<EmailUsernameInput> {
   TextEditingController emailController = TextEditingController();
-  bool _isValid = false;
+  final bool _isValid = false;
 
   @override
   Widget build(BuildContext context) {
@@ -38,28 +37,5 @@ class _EmailUsernameInputState extends State<EmailUsernameInput> {
         ],
       ),
     );
-  }
-
-  void _saveInput() async {
-    String input = emailController.text.trim();
-
-    // Simple email validation
-    bool isValidEmail =
-        RegExp(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$')
-            .hasMatch(input);
-
-    setState(() {
-      _isValid = isValidEmail;
-    });
-
-    if (isValidEmail) {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setString('emailUsername', input);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Input saved successfully'),
-        ),
-      );
-    }
   }
 }

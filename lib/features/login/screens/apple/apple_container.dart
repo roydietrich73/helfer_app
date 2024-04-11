@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 //import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:helfer_app/features/login/screens/apple/apple_button.dart';
@@ -11,7 +12,7 @@ class AppleContainer extends StatelessWidget {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  AppleContainer({Key? key}) : super(key: key);
+  AppleContainer({super.key});
 
   Future<void> _signInWithApple(BuildContext context) async {
     try {
@@ -41,7 +42,9 @@ class AppleContainer extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const HomeScreen()));
       }
     } catch (error) {
-      print("Fehler beim Anmelden mit Apple: $error");
+      if (kDebugMode) {
+        print("Fehler beim Anmelden mit Apple: $error");
+      }
     }
   }
   //

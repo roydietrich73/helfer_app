@@ -24,7 +24,7 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
+    return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: btnColor2,
@@ -144,6 +144,7 @@ class _RegisterFormState extends State<RegisterForm> {
                         'Besonderheiten': _besonderheiten
                       });
                       // Weiterleitung zum Home-Screen
+                      // ignore: use_build_context_synchronously
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:helfer_app/features/authentification/data/auth_reposiotry.dart';
 
 class FirebaseAuthRepository implements AuthRepository {
@@ -19,7 +20,9 @@ class FirebaseAuthRepository implements AuthRepository {
         password: password,
       );
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
   }
 
@@ -29,7 +32,9 @@ class FirebaseAuthRepository implements AuthRepository {
     try {
       await authInstance.signOut();
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
   }
 
@@ -42,7 +47,9 @@ class FirebaseAuthRepository implements AuthRepository {
         password: password,
       );
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
   }
 
@@ -52,7 +59,9 @@ class FirebaseAuthRepository implements AuthRepository {
     try {
       authInstance.sendPasswordResetEmail(email: email);
     } catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
   }
 }

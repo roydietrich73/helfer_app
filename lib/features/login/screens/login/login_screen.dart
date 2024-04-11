@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:helfer_app/common/controller/auth_controller.dart';
 import 'package:helfer_app/features/login/screens/login/login_button.dart';
@@ -39,7 +40,9 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 20),
               LoginBtn1(
                 onPressed: () {
-                  print('Login Button pressed');
+                  if (kDebugMode) {
+                    print('Login Button pressed');
+                  }
                   final email = _emailController.text.trim();
                   final password = _passwordController.text.trim();
                   notifier.loginUser(email, password);

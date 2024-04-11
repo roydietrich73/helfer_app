@@ -16,18 +16,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Color _color1 = btnColor;
-  Color _color2 = chtColor2;
-
-  void _toggleColor(int index) {
-    setState(() {
-      if (index == 1) {
-        _color1 = _color1 == btnColor ? chtColor2 : btnColor;
-      } else if (index == 2) {
-        _color2 = _color2 == btnColor ? chtColor2 : btnColor;
-      }
-    });
-  }
+  final Color _color1 = btnColor;
+  final Color _color2 = chtColor2;
 
   @override
   Widget build(BuildContext context) {

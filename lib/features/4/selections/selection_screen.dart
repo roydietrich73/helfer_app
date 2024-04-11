@@ -1,6 +1,4 @@
 // ignore_for_file: use_build_context_synchronously
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/bottom_navigation_bar/btn_nav_bar.dart';
@@ -33,27 +31,6 @@ class _SelectionScreenState extends State<SelectionScreen> {
     setState(() {
       selected[index] = !selected[index];
     });
-  }
-
-  Future<void> _saveSelection() async {
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
-
-    List<String> selectedCategories = [];
-    for (int i = 0; i < selected.length; i++) {
-      if (selected[i]) {
-        selectedCategories.add(categories[i]);
-      }
-    }
-    try {
-      await firestore.collection('users').doc('user_id').set({
-        'selectedCategories': selectedCategories,
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Auswahl gespeichert')),
-      );
-    } catch (e) {
-      print("Fehler beim Speichern der Auswahl: $e");
-    }
   }
 
   @override

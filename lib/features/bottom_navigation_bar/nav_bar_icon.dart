@@ -3,14 +3,13 @@ import 'package:helfer_app/config/colors.dart';
 
 class NavBarIcon extends StatelessWidget {
   const NavBarIcon(
-      {Key? key,
+      {super.key,
       required this.text,
       required this.icon,
       required this.selected,
       required this.onPressed,
       this.selectedColor = btnColor2,
-      this.defaultColor = btnColor})
-      : super(key: key);
+      this.defaultColor = btnColor});
   final String text;
   final IconData icon;
   final bool selected;

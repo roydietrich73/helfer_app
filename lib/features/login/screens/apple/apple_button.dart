@@ -7,9 +7,9 @@ class AppleBtn1 extends StatelessWidget {
   final Function() onPressed;
   const AppleBtn1({
     required this.onPressed,
-    Key? key,
+    super.key,
     required Text child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

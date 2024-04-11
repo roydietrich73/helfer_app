@@ -14,14 +14,14 @@ class ElvdButton extends StatelessWidget {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const SelectionScreen()));
         },
-        child: const Text(
-          'Weiter',
-          style: TextStyle(fontSize: 20),
-        ),
         style: ElevatedButton.styleFrom(
           backgroundColor: btnColor,
           fixedSize: const Size(150, 50),
           elevation: 20,
+        ),
+        child: const Text(
+          'Weiter',
+          style: TextStyle(fontSize: 20),
         ));
   }
 }

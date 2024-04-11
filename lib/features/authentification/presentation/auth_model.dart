@@ -10,6 +10,7 @@ class AuthModel extends ChangeNotifier {
 
   late bool isLoading;
 
+  // ignore: prefer_typing_uninitialized_variables
   var user;
 
   Stream<User?> get authStateChanges => _auth.authStateChanges();

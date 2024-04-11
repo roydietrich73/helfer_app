@@ -18,7 +18,7 @@ class ProfilePicture extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: const CircleAvatar(
-          radius: 50,
+          radius: 30,
           foregroundImage: NetworkImage(
             '',
           ),

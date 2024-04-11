@@ -16,7 +16,7 @@ class btnNavBar extends StatefulWidget {
 
 // ignore: camel_case_types
 class _btnNavBarState extends State<btnNavBar> {
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
 
   final List<Widget> _widgetOptions = <Widget>[
     const Text('Home'),
@@ -24,12 +24,6 @@ class _btnNavBarState extends State<btnNavBar> {
     const Text('Favorite'),
     const Text('Settings'),
   ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {

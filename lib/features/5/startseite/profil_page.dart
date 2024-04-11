@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:helfer_app/config/colors.dart';
 import 'package:helfer_app/features/5/startseite/rating_widget.dart';
@@ -35,7 +36,9 @@ class ProfilePage extends StatelessWidget {
               snapshot.data!.data() as Map<String, dynamic>;
 
           void submitRating(int rating, String comment) {
-            print('Bewertung: $rating, Kommentar: $comment');
+            if (kDebugMode) {
+              print('Bewertung: $rating, Kommentar: $comment');
+            }
           }
 
           return Padding(
@@ -44,7 +47,7 @@ class ProfilePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
-                  radius: 50,
+                  radius: 30,
                   backgroundImage: NetworkImage(userData['profileImageUrl']),
                 ),
                 const SizedBox(height: 20),

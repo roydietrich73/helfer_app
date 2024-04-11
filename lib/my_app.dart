@@ -22,6 +22,7 @@ import 'package:provider/provider.dart';
 class MyApp extends StatelessWidget {
   final AuthBloc authBloc = AuthBloc();
 
+  // ignore: prefer_typing_uninitialized_variables
   var userId;
 
   MyApp({super.key});

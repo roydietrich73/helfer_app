@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class PwI extends StatefulWidget {
   const PwI({super.key});
@@ -11,7 +10,7 @@ class PwI extends StatefulWidget {
 
 class _PasswordInputState extends State<PwI> {
   final TextEditingController passwordController = TextEditingController();
-  bool _isValid = true;
+  final bool _isValid = true;
 
   @override
   Widget build(BuildContext context) {
@@ -38,26 +37,5 @@ class _PasswordInputState extends State<PwI> {
         ],
       ),
     );
-  }
-
-  void _savePassword() async {
-    String password = passwordController.text;
-
-    // Simple password validation (length >= 6)
-    bool isValidPassword = password.length >= 6;
-
-    setState(() {
-      _isValid = isValidPassword;
-    });
-
-    if (isValidPassword) {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      await prefs.setString('password', password);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Password saved successfully'),
-        ),
-      );
-    }
   }
 }

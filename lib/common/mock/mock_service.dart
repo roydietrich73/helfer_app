@@ -4,7 +4,7 @@ import 'package:helfer_app/listen/user.dart';
 class MockService {
   List<User>? _userList;
 
-  Iterable<User> get users => users;
+  Iterable<User>? get users => null;
 
   void create() {
     _userList ??= [];
@@ -12,7 +12,7 @@ class MockService {
 
   void clearList() => _userList?.clear();
   void updateList(List<Participant> participants) {
-    _userList?.addAll(users);
+    _userList?.addAll(users!);
   }
 
   void deleteList() => _userList = null;

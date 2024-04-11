@@ -7,8 +7,7 @@ class ChatPage extends StatelessWidget {
   final String userId;
   final String otherUserId;
 
-  const ChatPage({Key? key, required this.userId, required this.otherUserId})
-      : super(key: key);
+  const ChatPage({super.key, required this.userId, required this.otherUserId});
 
   @override
   Widget build(BuildContext context) {

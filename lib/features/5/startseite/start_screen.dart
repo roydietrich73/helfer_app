@@ -33,6 +33,11 @@ class StartScreen extends StatelessWidget {
                   helpType: '',
                 ),
               ),
+              // BuildUserCard(
+              //  name: '',
+              //  profilePicture: '',
+              //),
+
               Expanded(
                 child: UserList(
                   title: 'Hilfe Suchen',

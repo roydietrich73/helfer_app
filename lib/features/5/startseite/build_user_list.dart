@@ -51,6 +51,7 @@ class UserList extends StatelessWidget {
                       doc.data() as Map<String, dynamic>;
                   return ListTile(
                     leading: CircleAvatar(
+                      maxRadius: 30.0,
                       backgroundImage: NetworkImage(data['profileImageUrl']),
                     ),
                     title: Text(data['name']),
